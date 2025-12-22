@@ -158,7 +158,7 @@ Your datapack name must follow Minecraft's naming conventions:
 
 ## Minecraft Versions
 
-This boilerplate uses `pack_format: 88` for **Minecraft 1.21.9+** (The Copper Age)
+This boilerplate uses `pack_format: 94` for **Minecraft 1.21.11** (Mounts of Mayhem)
 
 ### Pack Format for Other Versions
 Update `pack_format` in `pack.mcmeta` to match your Minecraft version:
