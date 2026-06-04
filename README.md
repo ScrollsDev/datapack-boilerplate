@@ -158,14 +158,31 @@ Your datapack name must follow Minecraft's naming conventions:
 
 ## Minecraft Versions
 
-This boilerplate uses `pack_format: 94` for **Minecraft 1.21.11** (Mounts of Mayhem)
+This boilerplate targets **Minecraft 26.1.2** (Tiny Takeover), which uses pack format **101.1**.
 
-### Pack Format for Other Versions
-Update `pack_format` in `pack.mcmeta` to match your Minecraft version:
+### The new format fields (Minecraft 25w31a and later)
+
+Starting in snapshot 25w31a, `pack.mcmeta` replaced the single `pack_format` integer with a `min_format` / `max_format` pair so a pack can declare a *range* of compatible versions. Each value is a `[major, minor]` array — the minor number is bumped for non-breaking changes:
+
+```json
+{
+  "pack": {
+    "min_format": [101, 1],
+    "max_format": [101, 1],
+    "description": "Minimal datapack boilerplate - ready to use"
+  }
+}
+```
+
+- Set `min_format` and `max_format` to the same value to target one version, or widen the range to support several at once.
+- The legacy `pack_format` field is **forbidden** when you only target modern versions (data pack format ≥ 82). Only add it back if you also need to support older versions.
+
+### Targeting other versions
+Update `min_format` / `max_format` in `pack.mcmeta` to match your Minecraft version (e.g. `[88, 0]` for 1.21.9, `[94, 1]` for 1.21.11):
 
 [Full pack format list →](https://minecraft.wiki/w/Pack_format#List_of_data_pack_formats)
 
-**Note:** Using the wrong pack format will show a warning in-game but may still work. Always use the correct format for your target version.
+**Note:** Using the wrong format will show a warning in-game but may still work. Always use the correct format for your target version.
 
 ## Resources
 
