@@ -22,8 +22,12 @@ Click the green **"Use this template"** button on GitHub to create your own copy
 # Navigate to your world's datapacks folder
 cd .minecraft/saves/YourWorldName/datapacks/
 
-# Clone your repository
+# Clone your repository (SSH)
 git clone git@github.com:YourUsername/your-datapack-name.git
+
+# ...or over HTTPS if you don't have SSH keys set up
+git clone https://github.com/YourUsername/your-datapack-name.git
+
 cd your-datapack-name
 ```
 
